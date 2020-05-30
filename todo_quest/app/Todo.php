@@ -8,5 +8,5 @@ class Todo extends Model
 {
     public static $rules = array(
         'body' => 'required'
-    )
+    );
 }
