@@ -23,7 +23,14 @@
   <div class="todo-lists">
     <ul>
       @foreach ($user->todos as $todo)
-        <li class="todo-list">{{ $todo->body }}<a href="{{ action('TodosController@edit', $todo) }}">編集</a></li>
+        <li class="todo-list">
+          {{ $todo->body }}
+          <a href="{{ action('TodosController@edit', $todo) }}">編集</a>
+          <form action="{{ action('TodosController@destroy', $todo) }}" method="post" style="display: inline;">
+            @csrf
+            <input type="submit" value="削除">
+          </form>
+        </li>
       @endforeach
     </ul>
   </div>

@@ -41,4 +41,10 @@ class TodosController extends Controller
         $todo->save();
         return redirect('/todos/show');
     }
+
+    public function destroy(Todo $todo)
+    {
+        $todo->delete();
+        return redirect('/todos/show');
+    }
 }
