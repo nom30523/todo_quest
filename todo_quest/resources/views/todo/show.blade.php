@@ -27,7 +27,15 @@
           <form action="{{ action('TodosController@status', $todo) }}" method="post" id="form_{{ $todo->id }}">
             @csrf
           </form>
-          <i class="far fa-square" data-id="{{ $todo->id }}"></i>
+          @if ($todo->status == 0)
+            <a href="#" class="status" data-id="{{ $todo->id }}">
+              <i class="far fa-square"></i>
+            </a>
+          @else
+            <a href="#" class="status" data-id="{{ $todo->id }}">
+              <i class="far fa-check-square"></i>
+            </a>
+          @endif
           {{ $todo->body }}
           <a href="{{ action('TodosController@edit', $todo) }}">編集</a>
           <form action="{{ action('TodosController@destroy', $todo) }}" method="post" style="display: inline;">
@@ -39,4 +47,5 @@
     </ul>
   </div>
 </div>
+<script src="/js/status.js"></script>
 @endsection

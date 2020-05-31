@@ -47,4 +47,15 @@ class TodosController extends Controller
         $todo->delete();
         return redirect('/todos/show');
     }
+
+    public function status(Todo $todo)
+    {
+        if ($todo->status == 0) {
+            $todo->status = 1;
+        } else {
+            $todo->status = 0;
+        }
+        $todo->save();
+        return redirect('/todos/show');
+    }
 }
