@@ -23,7 +23,7 @@
   <div class="todo-lists">
     <ul>
       @foreach ($user->todos as $todo)
-        <li class="todo-list">{{ $todo->body }}</li>
+        <li class="todo-list">{{ $todo->body }}<a href="{{ action('TodosController@edit', $todo) }}">編集</a></li>
       @endforeach
     </ul>
   </div>

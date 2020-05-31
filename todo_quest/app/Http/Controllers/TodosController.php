@@ -28,4 +28,17 @@ class TodosController extends Controller
         $user->todos()->save($todo);
         return redirect('/todos/show');
     }
+
+    public function edit(Todo $todo)
+    {
+        return view('todo.edit')->with('todo', $todo);
+    }
+
+    public function update(Request $request, Todo $todo)
+    {
+        $this->validate($request, Todo::$rules);
+        $todo->body = $request->body;
+        $todo->save();
+        return redirect('/todos/show');
+    }
 }

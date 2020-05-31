@@ -22,3 +22,5 @@ Auth::routes();
 Route::get('/', 'TodosController@index');
 Route::get('/todos/show', 'TodosController@show');
 Route::post('/users/{user}/todos', 'TodosController@store');
+Route::get('/todos/{todo}/edit', 'TodosController@edit');
+Route::post('/todos/{todo}/update', 'TodosController@update');
