@@ -60,12 +60,20 @@ class TodosController extends Controller
 
     public function status(Todo $todo)
     {
+        $user = Auth::user();
+        $level = $user->level->first();
         if ($todo->status == 0) {
             $todo->status = 1;
+            $level->exp += 1;
+            if ($level->level < 7) {
+                $thresold = Thresold::where('level', $level->level + 1)->first();
+                if ($level->exp >= $thresold->thresold) $level->level += 1;
+            }
         } else {
             $todo->status = 0;
         }
         $todo->save();
+        $level->save();
         return redirect('/todos/show');
     }
 }
