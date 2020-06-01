@@ -16989,6 +16989,10 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+.user_card {
+  margin-bottom: 20px;
+}
+
 .user_card img {
   width: 100%;
 }
@@ -16996,10 +17000,6 @@ readers do not read off random characters that represent icons */
 .user_card .card-items {
   display: flex;
   align-items: center;
-}
-
-.todo-form-wrap {
-  margin-top: 20px;
 }
 
 .todo-form-wrap .label-text {
