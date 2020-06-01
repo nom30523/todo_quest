@@ -1,0 +1,26 @@
+.user_card {
+  img {
+    width: 100%;
+  }
+  .card-items {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.todo-form-wrap {
+  margin-top: 20px;
+  .label-text {
+    padding-left: 15px;
+    margin: 0;
+  }
+}
+
+.todo-list-card {
+  .list-menu {
+    padding-left: 5px;
+  }
+  .font-red {
+    color: tomato;
+  }
+}
