@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-        $level = new Level();
+        $level = new Level;
         $user->level()->save($level);
         return $user;
     }
