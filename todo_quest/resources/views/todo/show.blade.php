@@ -10,7 +10,7 @@
       <div class="col-sm-8 card-items">
         <div class="card-body">
           <h3 class="card-title">Name: {{ $user->name }}</h3>
-          <h5 class="card-text">レベル: 1</h5>
+          <h5 class="card-text">レベル: {{ $user->level->level }}</h5>
           <h5 class="card-text">次のレベルまで: 3Exp</h5>
         </div>
       </div>
