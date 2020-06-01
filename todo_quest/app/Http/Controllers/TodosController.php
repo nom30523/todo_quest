@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Todo;
+use App\Thresold;
 use Illuminate\Support\Facades\Auth;
 
 class TodosController extends Controller
@@ -15,7 +16,16 @@ class TodosController extends Controller
 
     public function show() {
         $user = Auth::user();
-        $param = ['user' => $user];
+        $level = $user->level->level;
+        if ($level < 7) {
+            $thresold = Thresold::where('level', $level + 1)->first();
+        } else {
+            $thresold = 0;
+        }
+        $param = [
+            'user' => $user,
+            'thresold' => $thresold,
+        ];
         return view('todo.show', $param);
     }
 

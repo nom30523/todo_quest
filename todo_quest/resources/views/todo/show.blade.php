@@ -11,7 +11,11 @@
         <div class="card-body">
           <h3 class="card-title">Name: {{ $user->name }}</h3>
           <h5 class="card-text">レベル: {{ $user->level->level }}</h5>
-          <h5 class="card-text">次のレベルまで: 3Exp</h5>
+          @if ($user->level->level < 7)
+            <h5 class="card-text">次のレベルまで: {{ $thresold->thresold - $user->level->exp }} Exp</h5>
+          @else
+            <h5 class="card-text">次のレベルまで: レベルMAXです！</h5>
+          @endif
         </div>
       </div>
     </div>
