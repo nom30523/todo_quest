@@ -74,9 +74,4 @@ class RegisterController extends Controller
         $user->level()->save($level);
         return $user;
     }
-
-    public function redirectPath() 
-    {
-        return 'todos/show';
-    }
 }

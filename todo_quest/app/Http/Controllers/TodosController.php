@@ -37,7 +37,7 @@ class TodosController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $user->todos()->save($todo);
-        return redirect('/todos/show');
+        return redirect('/');
     }
 
     public function edit(Todo $todo)
@@ -50,13 +50,13 @@ class TodosController extends Controller
         $this->validate($request, Todo::$rules);
         $todo->body = $request->body;
         $todo->save();
-        return redirect('/todos/show');
+        return redirect('/');
     }
 
     public function destroy(Todo $todo)
     {
         $todo->delete();
-        return redirect('/todos/show');
+        return redirect('/');
     }
 
     public function status(Todo $todo)
@@ -75,6 +75,6 @@ class TodosController extends Controller
         }
         $todo->save();
         $level->save();
-        return redirect('/todos/show');
+        return redirect('/');
     }
 }
