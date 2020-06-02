@@ -16993,8 +16993,12 @@ readers do not read off random characters that represent icons */
   margin-bottom: 20px;
 }
 
-.user_card img {
-  width: 100%;
+.user_card .img-box {
+  text-align: center;
+}
+
+.user_card .img-box img {
+  height: 300px;
 }
 
 .user_card .card-items {

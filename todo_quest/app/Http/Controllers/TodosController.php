@@ -24,6 +24,7 @@ class TodosController extends Controller
         }
         $param = [
             'user' => $user,
+            'level' => $level,
             'thresold' => $thresold,
         ];
         return view('todo.show', $param);
@@ -61,7 +62,7 @@ class TodosController extends Controller
     public function status(Todo $todo)
     {
         $user = Auth::user();
-        $level = $user->level->first();
+        $level = $user->level;
         if ($todo->status == 0) {
             $todo->status = 1;
             $level->exp += 1;
