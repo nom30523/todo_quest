@@ -43,12 +43,10 @@
   @endif
   <form action="{{ action('TodosController@store', $user) }}" method="post">
     @csrf
-    <div class="row todo-form-wrap">
+    <div class="todo-form-wrap">
       <label for="todo-content" class="label-text">やることを追加する</label>
-      <div class="form-group col-sm-10">
+      <div class="todo-form-content">
         <input type="text" name="body" value="{{ old('body') }}" class="form-control" id="todo-content">
-      </div>
-      <div class="col-sm-2">
         <input type="submit" value="追加" class="btn btn-primary">
       </div>
     </div>

@@ -14,9 +14,13 @@
 
 .todo-form-wrap {
   .label-text {
-    padding-left: 15px;
     margin: 0;
   }
+  .todo-form-content {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
 }
 
 .todo-list-card {
