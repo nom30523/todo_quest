@@ -1,7 +1,10 @@
 .user_card {
   margin-bottom: 20px;
-  img {
-    width: 100%;
+  .img-box {
+    text-align: center;
+    img {
+      height: 300px;
+    }
   }
   .card-items {
     display: flex;
@@ -11,9 +14,13 @@
 
 .todo-form-wrap {
   .label-text {
-    padding-left: 15px;
     margin: 0;
   }
+  .todo-form-content {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
 }
 
 .todo-list-card {

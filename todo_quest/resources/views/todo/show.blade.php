@@ -4,14 +4,32 @@
 <div class="container">
   <div class="user_card card">
     <div class="row">
-      <div class="col-sm-4">
-        <img src="{{ asset('/images/level1.png') }}" alt="level1">
+      <div class="col-sm-4 img-box">
+        @if ($level == 1)
+          <img src="{{ asset('/images/level1.png') }}" alt="level1">
+        @elseif ($level == 2)
+          <img src="{{ asset('/images/level2.png') }}" alt="level2">
+        @elseif ($level == 3)
+          <img src="{{ asset('/images/level3.png') }}" alt="level3">
+        @elseif ($level == 4)
+          <img src="{{ asset('/images/level4.png') }}" alt="level4">
+        @elseif ($level == 5)
+          <img src="{{ asset('/images/level5.png') }}" alt="level5">
+        @elseif ($level == 6)
+          <img src="{{ asset('/images/level6.png') }}" alt="level6">
+        @else
+          <img src="{{ asset('/images/level7.png') }}" alt="level7">
+        @endif
       </div>
       <div class="col-sm-8 card-items">
         <div class="card-body">
           <h3 class="card-title">Name: {{ $user->name }}</h3>
-          <h5 class="card-text">レベル: 1</h5>
-          <h5 class="card-text">次のレベルまで: 3Exp</h5>
+          <h5 class="card-text">レベル: {{ $level }}</h5>
+          @if ($level < 7)
+            <h5 class="card-text">次のレベルまで: {{ $thresold->thresold - $user->level->exp }} Exp</h5>
+          @else
+            <h5 class="card-text">次のレベルまで: レベルMAXです！</h5>
+          @endif
         </div>
       </div>
     </div>
@@ -25,12 +43,10 @@
   @endif
   <form action="{{ action('TodosController@store', $user) }}" method="post">
     @csrf
-    <div class="row todo-form-wrap">
+    <div class="todo-form-wrap">
       <label for="todo-content" class="label-text">やることを追加する</label>
-      <div class="form-group col-sm-10">
+      <div class="todo-form-content">
         <input type="text" name="body" value="{{ old('body') }}" class="form-control" id="todo-content">
-      </div>
-      <div class="col-sm-2">
         <input type="submit" value="追加" class="btn btn-primary">
       </div>
     </div>
