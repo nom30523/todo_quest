@@ -13,4 +13,9 @@ class UsersController extends Controller
         $param = ['items' => $items];
         return view('user.index', $param);
     }
+
+    public function search(Request $request)
+    {
+        
+    }
 }

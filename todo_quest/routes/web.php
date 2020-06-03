@@ -24,3 +24,4 @@ Route::post('/todos/{todo}/update', 'TodosController@update');
 Route::post('/todos/{todo}/destroy', 'TodosController@destroy');
 Route::post('/todos/{todo}/status', 'TodosController@status');
 Route::get('/users/index', 'UsersController@index');
+Route::post('/users/search', 'UsersController@search');

@@ -2,6 +2,13 @@
 
 @section('content')
 <div class="container">
+  <form action="{{ action('UsersController@search') }}" method="post">
+    <label for="user-search-form">ユーザー検索</label>
+    <div class="serch-form-wrap">
+      <input type="text" name="input" class="form-control" id="user-search-form">
+      <input type="submit" class="btn btn-primary" value="検索">
+    </div>
+  </form>
   @foreach ($items as $item)
     <div class="user_card card">
       <div class="row">

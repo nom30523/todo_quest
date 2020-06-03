@@ -17027,3 +17027,8 @@ readers do not read off random characters that represent icons */
   justify-content: center;
 }
 
+.serch-form-wrap {
+  display: flex;
+  margin-bottom: 30px;
+}
+
