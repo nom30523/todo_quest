@@ -3,6 +3,16 @@
   <label for="user-search-form">ユーザー検索</label>
   <div class="serch-form-wrap">
     <input type="text" name="input" class="form-control" id="user-search-form" value="{{ $input }}">
+    <select name="select" id="">
+      <option value="">レベルを選択</option>
+      <option value="1">レベル１</option>
+      <option value="2">レベル２</option>
+      <option value="3">レベル３</option>
+      <option value="4">レベル４</option>
+      <option value="5">レベル５</option>
+      <option value="6">レベル６</option>
+      <option value="7">レベル７</option>
+    </select>
     <input type="submit" class="btn btn-primary" value="検索">
   </div>
 </form>

@@ -20,13 +20,9 @@ class UsersController extends Controller
     public function search(Request $request)
     {
         $input = $request->input;
-        if ($input != '') {
-            $items = User::with('level')->where('name', 'like', '%'.$input.'%')->paginate(9);
-        } else {
-            $items = User::with('level')->paginate(9);
-        }
+        $select = $request->select;
         $param = [
-            'items' => $items,
+            'items' => User::userSearch($input, $select),
             'input' => $input,
         ];
         return view('user.search', $param);

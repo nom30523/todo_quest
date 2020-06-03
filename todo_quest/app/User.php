@@ -44,4 +44,22 @@ class User extends Authenticatable
     public function level() {
         return $this->hasOne('App\Level');
     }
+
+    public static function userSearch($input, $select)
+    {
+        if ($input != '' && $select != '') {
+            $items = User::whereHas('level', function($q) use ($select) {
+                $q->where('level', $select);
+            })->where('name', 'like', '%'.$input.'%')->paginate(9);
+        } elseif ($input != '') {
+            $items = User::with('level')->where('name', 'like', '%'.$input.'%')->paginate(9);
+        } elseif ($select != '') {
+            $items = User::whereHas('level', function($q) use ($select) {
+                $q->where('level', $select);
+            })->paginate(9);
+        } else {
+            $items = User::with('level')->paginate(9);
+        }
+        return $items;
+    }
 }
