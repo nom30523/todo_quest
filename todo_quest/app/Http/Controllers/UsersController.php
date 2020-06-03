@@ -9,7 +9,7 @@ class UsersController extends Controller
 {
     public function index()
     {
-        $items = Level::with('user')->get();
+        $items = Level::with('user')->paginate(9);
         $param = ['items' => $items];
         return view('user.index', $param);
     }

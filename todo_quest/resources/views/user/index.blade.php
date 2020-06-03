@@ -31,5 +31,6 @@
       </div>
     </div>
   @endforeach
+  {{ $items->links() }}
 </div>
 @endsection
