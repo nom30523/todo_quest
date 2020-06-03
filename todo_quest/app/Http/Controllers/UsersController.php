@@ -13,6 +13,7 @@ class UsersController extends Controller
         $param = [
             'items' => $items,
             'input' => '',
+            'select' => '',
         ];
         return view('user.index', $param);
     }
@@ -24,6 +25,7 @@ class UsersController extends Controller
         $param = [
             'items' => User::userSearch($input, $select),
             'input' => $input,
+            'select' => $select,
         ];
         return view('user.search', $param);
     }
