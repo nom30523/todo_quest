@@ -36,3 +36,8 @@ PHP、Laravelを使用し、Todoアプリを作成しました。
 
 - ユーザー名でのあいまい検索、レベルでの絞り込み検索に対応しています。
 - ユーザー名のみでの検索、レベルのみでの検索にも、もちろん対応しております。
+
+### レスポンシブ対応
+<img src="https://i.gyazo.com/f331c2e848b4f37ab398f0c255751d3c.png" width="300"> <img src="https://i.gyazo.com/1e4839f16378fc6d94ffa64dd36b4be7.png" width="200">  
+
+- bootstrapを利用し、レスポンシブに対応しております。
