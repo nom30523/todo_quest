@@ -3,6 +3,13 @@ PHP、Laravelを使用し、Todoアプリを作成しました。
 私はゲームが趣味のため、レベルアップ機能付きのTodoアプリに致しました。  
 <img src="https://i.gyazo.com/df696080efd44bb8211603863e684ee3.png" width="400"/>
 
+## 作品URL
+http://todo-quest2020.herokuapp.com/  
+
+- テストユーザー
+  - e-mail:   test_1@gmail.com
+  - password: test_password_1
+
 ## 使用した技術
 - PHP 7.4
 - Laravel 7.13.0
